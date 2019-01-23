@@ -1,15 +1,15 @@
-import import React from 'react'
+import React from "react";
 
-const ShoppingList = () => {
-  return (
-    <div className="shopping-list">
-      <ul>
-        <li>list1</li>
-        <li>list2</li>
-        <li>list3</li>
-      </ul>
-    </div>
-  )
+class ShoppingList extends React.Component {
+  render() {
+    return (
+      <div className="shopping-list">
+        <h1>
+          babaca
+        </h1>
+      </div>
+    );
+  }
 }
 
-export default ShoppingList
+export default ShoppingList;
