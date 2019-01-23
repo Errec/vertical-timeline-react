@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.sass';
-
+import Home from './components/Home'
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>
-          heu
-        </h1>
-      </div>
+      <Router>
+        <div className="App">
+          <Route path='/' component={Home}/>
+        </div>
+      </Router>
     );
   }
 }
