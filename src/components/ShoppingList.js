@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { fetchItems, groupItems } from "../actions/itemsActions";
 import ResultCard from "./ResultCard"
+import "../styles/components/ShoppingList.sass";
 
 class ShoppingList extends React.Component {
   componentWillMount () {

@@ -1,6 +1,8 @@
 .result-card
-  background-color: orangered
   max-width: 400px
+  border-left: solid #01b82b 4px
+  margin: 0 auto
+  padding: 12px 24px
   ul,
   li,
   p
@@ -8,4 +10,85 @@
     padding: 0
     list-style: none
 
-  
+.result-card__list
+  position: relative
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  align-items: center
+  &:after
+    content: ""
+    position: absolute
+    width: 20px
+    height: 20px
+    left: -41px
+    top: 0
+    bottom: 0
+    border-radius: 50%
+    border: solid #01b82b 5px
+    background-color: white
+
+.result-card__time
+  background-color: #dedede
+  border-radius: 12px
+  p
+    color: #606060
+    padding: 4px 10px
+    font-size: 1.25rem
+
+.result-card__value
+  background-color: #efca61
+  border-radius: 12px
+  p
+    color: white
+    padding: 4px 10px
+    font-size: 1.25rem
+
+.result-card__store
+  p
+    font-size: 1.25rem
+
+.result-card__table-wrapper
+  border-radius: 12px
+  padding: 12px
+  background-color: #dedede
+  margin-top: 24px
+
+.result-card__table
+  width: 100%
+  text-align: left
+  border-collapse: collapse
+  padding: 12px
+
+.result-card__table-head
+  th
+    color: #919191
+    padding: 4px
+    border-right: solid #e9e9e9 3px
+    &:last-child
+      border-right: none
+      padding-left: 12px
+.result-card__table-body
+  td
+    padding: 4px
+    border-right: solid #e9e9e9 3px
+    border-top: solid #e9e9e9 3px
+    &:last-child
+      padding-left: 12px
+      border-right: none
+
+@media screen and (max-width: 500px)
+  .result-card__time
+    p
+      padding: 2px 5px
+      font-size: 0.8rem
+
+  .result-card__value
+    border-radius: 12px
+    p
+      padding: 2px 5px
+      font-size: 0.8rem
+
+  .result-card__store
+    p
+      font-size: 0.8rem
