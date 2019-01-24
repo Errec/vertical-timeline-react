@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 import "../styles/components/ResultCard.sass";
 
 class ResultCard extends Component {
@@ -10,7 +11,7 @@ class ResultCard extends Component {
       if (data.event && data.event === "comprou") {
         return <ul>
             <li>
-              <p>{data.timestamp}</p>
+            <p>{moment(data.timestamp).format("DD/MM/YYYY HH:MM")}</p>
             </li>
             <li>
               <p>R$ {data.revenue}</p>
