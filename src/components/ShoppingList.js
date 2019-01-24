@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchItems } from "../actions/itemsActions";
 import PropTypes from "prop-types";
+import { fetchItems, groupItems } from "../actions/itemsActions";
+import ResultCard from "./ResultCard"
 
 class ShoppingList extends React.Component {
   componentWillMount () {
@@ -10,17 +11,19 @@ class ShoppingList extends React.Component {
 
   render() {
     if (this.props.data.isLoaded) {
-      return (
-        <div className="shopping-list">
-          <h1>
-            {this.props.data.items[0].event}
-          </h1>
-        </div>
-      )
+      return(<div className="shopping-list">
+          {this.props.groupsData.groupedItems.map((group, index) => (
+            <ResultCard
+              groupData={group[Object.keys(group)[0]]}
+              cardId={Object.keys(group)[0]}
+              key={index}
+            />
+          ))}
+        </div>);
     } else {
       return (
         <div className="shopping-list">
-          <h1> blleeeeee </h1>
+          <p>LOADING...</p>
         </div>
       )
     }
@@ -29,11 +32,14 @@ class ShoppingList extends React.Component {
 
 ShoppingList.propTypes = {
   fetchItems: PropTypes.func.isRequired,
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  groupItems: PropTypes.func.isRequired,
+  groupsData: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  data: state.items.itemsData
+  data: state.items.itemsData,
+  groupsData: state.items.groupsData
 });
 
-export default connect(mapStateToProps, { fetchItems })(ShoppingList);
+export default connect(mapStateToProps, { fetchItems, groupItems })(ShoppingList);

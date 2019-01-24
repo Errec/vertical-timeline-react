@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import './App.sass';
+import './styles/App.sass';
 
 import Home from './components/Home'
 import ShoppingList from './components/ShoppingList'
